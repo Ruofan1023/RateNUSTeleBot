@@ -1,1 +1,5 @@
 .idea
+__pycache__
+food_handlers/__pycache__
+hostel_handlers/__pycache__
+study_area_handlers/__pycache__
