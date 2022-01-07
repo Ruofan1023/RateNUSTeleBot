@@ -7,8 +7,11 @@ from telegram.utils import helpers
 # api_key = os.environ['API_KEY']
 import hostel_list_command_handler
 import view_hostel_handler
+# RF test bot
+# api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
+# XC test bot
+# api_key = '5097774646:AAG-O4n-xc2hmOjW0pB_evVxcgMM-EfGKjY'
 
-api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
 updater = Updater(api_key, use_context=True)
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -25,13 +28,16 @@ if __name__ == '__main__':
 
 
 def start_command(update, context):
-    url = helpers.create_deep_linked_url(context.bot.username, HOSTELS_LINK)
-    text = "Feel free to tell your friends about it:\n\n" + url
-    update.message.reply_text(text)
-    # update.message.reply_text("*Welcome to RateNUS!*\n"
-    #                           "🏖"
-    #                           "Type 'hostel', 'food' or 'studyArea' to view NUS facilities" + "🚨",
-    #                           parse_mode='Markdown')
+    update.message.reply_text("🔥*Welcome to RateNUS!*🔥\n\n"
+                              "RateNUS was created to improve the campus living "
+                              "experience of both incoming and current students. "
+                              "It is an open platform that welcomes anyone's "
+                              "contribution in providing accurate and useful "
+                              "information about campus living/studying\n\n"
+                              "🏖 To view a list of hostels: \nEnter */hostel*\n"
+                              "🍱 To view a list of food stalls: \nEnter */food*\n"
+                              "📚 To view a list of study areas: \nEnter */studyArea*\n",
+                              parse_mode= 'Markdown')
     chat_id = update.message.chat.id
     print("chat id: " + str(chat_id))
 
