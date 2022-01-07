@@ -47,9 +47,9 @@ def start_command(update, context):
     print("chat id: " + str(chat_id))
 
 
-def handle_message(update, context):
-    text = str(update.message.text)
-    update.message.reply_text(text)
+# def handle_message(update, context):
+#     text = str(update.message.text)
+#     update.message.reply_text(text)
 
 def main():
     # Listens for user events
@@ -68,7 +68,7 @@ def main():
     dp.add_handler(view_study_area_handler.view_study_area_command_handler)
     dp.add_handler(study_area_list_command_handler.study_area_list_command_handler)
 
-    dp.add_handler(MessageHandler(Filters.text, handle_message))
+    # dp.add_handler(MessageHandler(Filters.text, handle_message))
     updater.start_polling()
     updater.idle()
 
