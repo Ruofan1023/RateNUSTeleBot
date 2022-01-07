@@ -1,10 +1,10 @@
 import requests
 from telegram.ext import *
 
-url = 'https://www.ratenus.cyou:8080/hostel'
+url = 'https://www.ratenus.cyou:8080/stall'
 
 
-def hostel_list_command(update, context):
+def stall_list_command(update, context):
     body = {
         "orderBy": "id",
         "isLowToHigh": True,
@@ -16,10 +16,10 @@ def hostel_list_command(update, context):
     response_json = response.json()
     name_list = []
     content_list = response_json['content']
-    for hostel in content_list:
-        name_list.append(str(hostel['id']) + ". " + hostel['name'] + "\n")
-    update.message.reply_text("Which hostel would you like to see?\nReply with /hostel + id :)")
+    for food in content_list:
+        name_list.append(str(food['id']) + ". " + food['name'] + "\n")
+    update.message.reply_text("Which restaurant would you like to see?\nReply with /food + id :)")
     update.message.reply_text("".join(name_list))
 
 
-hostel_list_command_handler = CommandHandler("hostels", hostel_list_command)
+stall_list_command_handler = CommandHandler("foods", stall_list_command)

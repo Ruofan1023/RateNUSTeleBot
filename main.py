@@ -7,16 +7,19 @@ from telegram.utils import helpers
 # api_key = os.environ['API_KEY']
 import hostel_list_command_handler
 import view_comments_handler
+import stall_list_commmand_handler
 import view_hostel_handler
+import view_stall_handler
+
 # RF test bot
-# api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
+api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
 # XC test bot
-api_key = '5097774646:AAG-O4n-xc2hmOjW0pB_evVxcgMM-EfGKjY'
+# api_key = '5097774646:AAG-O4n-xc2hmOjW0pB_evVxcgMM-EfGKjY'
 
 updater = Updater(api_key, use_context=True)
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
-HOSTELS_LINK = 'hostels-link'
+
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
@@ -65,10 +68,11 @@ def main():
     updater = Updater(api_key, use_context=True)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start_command))
-    dp.add_handler(CommandHandler("hostels", hostel_list_command_handler.hostel_list_command))
+    dp.add_handler(hostel_list_command_handler.hostel_list_command_handler)
     dp.add_handler(view_hostel_handler.view_hostel_command_handler)
     dp.add_handler(view_comments_handler.view_comments_handler)
-    dp.add_handler(CommandHandler("food", view_food_list_command))
+    dp.add_handler(stall_list_commmand_handler.stall_list_command_handler)
+    dp.add_handler(view_stall_handler.view_food_command_handler)
     dp.add_handler(CommandHandler("studyArea", view_study_area_list_command))
     dp.add_handler(MessageHandler(Filters.text, handle_message))
     updater.start_polling()
