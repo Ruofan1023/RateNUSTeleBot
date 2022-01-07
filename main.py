@@ -1,15 +1,13 @@
 # This is a sample Python script.
-from telegram import InlineQueryResultArticle, InputTextMessageContent, Bot
 import logging
 from telegram.ext import *
-from telegram.utils import helpers
 
 # api_key = os.environ['API_KEY']
-import hostel_list_command_handler
-import stall_list_commmand_handler
-import view_hostel_handler
+import study_area_handlers.view_study_area_handler
+from hostel_handlers import hostel_list_command_handler, view_hostel_handler
 # RF test bot
-import view_stall_handler
+from food_handlers import view_stall_handler, stall_list_commmand_handler
+from study_area_handlers import view_study_area_handler, study_area_list_command_handler
 
 api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
 # XC test bot
@@ -67,11 +65,17 @@ def main():
     updater = Updater(api_key, use_context=True)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start_command))
+
     dp.add_handler(hostel_list_command_handler.hostel_list_command_handler)
     dp.add_handler(view_hostel_handler.view_hostel_command_handler)
+
     dp.add_handler(stall_list_commmand_handler.stall_list_command_handler)
     dp.add_handler(view_stall_handler.view_food_command_handler)
-    dp.add_handler(CommandHandler("studyArea", view_study_area_list_command))
+
+    dp.add_handler(view_study_area_handler.view_study_area_command_handler)
+    dp.add_handler(stall_list_commmand_handler.stall_list_command_handler)
+
+
     dp.add_handler(MessageHandler(Filters.text, handle_message))
     updater.start_polling()
     updater.idle()
