@@ -18,6 +18,7 @@ def hostel_list_command(update, context):
     content_list = response_json['content']
     for hostel in content_list:
         name_list.append(str(hostel['id']) + ". " + hostel['name'] + "\n")
+    update.message.reply_text("Which hostel would you like to see?\nReply with /hostel + id :)")
     update.message.reply_text("".join(name_list))
 
 

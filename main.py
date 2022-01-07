@@ -8,14 +8,14 @@ from telegram.utils import helpers
 import hostel_list_command_handler
 import view_hostel_handler
 # RF test bot
-# api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
+api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
 # XC test bot
 # api_key = '5097774646:AAG-O4n-xc2hmOjW0pB_evVxcgMM-EfGKjY'
 
 updater = Updater(api_key, use_context=True)
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
-HOSTELS_LINK = 'hostels-link'
+
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
