@@ -18,8 +18,8 @@ def study_area_list_command(update, context):
     content_list = response_json['content']
     for studyArea in content_list:
         name_list.append(str(studyArea['id']) + ". " + studyArea['name'] + "\n")
-    update.message.reply_text("Which study area would you like to see?\nReply with /studyArea + id :)")
+    update.message.reply_text("Which study area would you like to see?\nReply with /studyarea + id :)")
     update.message.reply_text("".join(name_list))
 
 
-study_area_list_command_handler = CommandHandler("studyAreas", study_area_list_command)
+study_area_list_command_handler = CommandHandler("studyareas", study_area_list_command)

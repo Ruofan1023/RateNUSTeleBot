@@ -28,7 +28,7 @@ def view_study_area_command(update, context):
                                   "\. For more information, please visit our website " + link + "\.",
                                   parse_mode='MarkDownV2')
     else:
-        update.message.reply_text("To view a study area's info, enter /studyArea with the study area id")
+        update.message.reply_text("To view a study area's info, enter /studyarea with the study area id")
 
 
-view_study_area_command_handler = CommandHandler("studyArea", view_study_area_command)
+view_study_area_command_handler = CommandHandler("studyarea", view_study_area_command)
