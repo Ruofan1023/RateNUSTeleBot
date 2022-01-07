@@ -8,6 +8,7 @@ def view_comments(update, context):
     if len(context.args) != 2:
         update.message.reply_text("Invalid command, please try again!")
     else:
+        link = '[here](https://ratenus.com)'
         comment_type = context.args[0]
         if comment_type == "stall":
             update.message.reply_text("Invalid command, please try again!")
@@ -37,7 +38,7 @@ def view_comments(update, context):
                         comment_list.append("✏️ Comment: " + str(comment['text']) + "\n\n")
                     update.message.reply_text("".join(comment_list))
                 else:
-                    update.message.reply_text("No comments available, add one now!")
+                    update.message.reply_text("No comments available, try adding one " + link, parse_mode='MarkDownV2')
             else:
                 update.message.reply_text("Invalid command, please try again!")
 

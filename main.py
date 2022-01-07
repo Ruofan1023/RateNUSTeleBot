@@ -12,9 +12,9 @@ import view_hostel_handler
 import view_stall_handler
 
 # RF test bot
-api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
+# api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
 # XC test bot
-# api_key = '5097774646:AAG-O4n-xc2hmOjW0pB_evVxcgMM-EfGKjY'
+api_key = '5097774646:AAG-O4n-xc2hmOjW0pB_evVxcgMM-EfGKjY'
 
 updater = Updater(api_key, use_context=True)
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -38,9 +38,9 @@ def start_command(update, context):
                               "It is an open platform that welcomes anyone's "
                               "contribution in providing accurate and useful "
                               "information about campus living/studying\n\n"
-                              "🏖 To view a list of hostels: \nEnter */hostel*\n"
-                              "🍱 To view a list of food stalls: \nEnter */food*\n"
-                              "📚 To view a list of study areas: \nEnter */studyArea*\n",
+                              "🏖 To view a list of hostels: \nEnter */hostels*\n"
+                              "🍱 To view a list of food stalls: \nEnter */foods*\n"
+                              "📚 To view a list of study areas: \nEnter */studyAreas*\n",
                               parse_mode= 'Markdown')
     chat_id = update.message.chat.id
     print("chat id: " + str(chat_id))
