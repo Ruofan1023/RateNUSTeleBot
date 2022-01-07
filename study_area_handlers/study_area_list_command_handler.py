@@ -1,7 +1,7 @@
 import requests
 from telegram.ext import *
 
-url = 'https://www.ratenus.cyou:8080/studyArea'
+url = 'https://www.ratenus.cyou:8080/studyarea'
 
 
 def study_area_list_command(update, context):
@@ -14,6 +14,7 @@ def study_area_list_command(update, context):
     response = requests.post(url, json=body)
     response_json = response.json()
     name_list = []
+    print(response_json)
     content_list = response_json['content']
     for studyArea in content_list:
         name_list.append(str(studyArea['id']) + ". " + studyArea['name'] + "\n")

@@ -34,7 +34,7 @@ def view_comments(update, context):
                 if list_len > 0:
                     comment_list.append("🔥" + str(content_list[0]['targetName']) + "🔥" + "\n\n")
                     for comment in content_list:
-                        comment_list.append("⭐ Rating: " + str(comment['rating']) + "/5.0 \n")
+                        comment_list.append("⭐ Rating: " + str(comment['rating']) + " / 5.0 \n")
                         comment_list.append("✏️ Comment: " + str(comment['text']) + "\n\n")
                     update.message.reply_text("".join(comment_list))
                 else:

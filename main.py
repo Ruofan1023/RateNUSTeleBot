@@ -49,19 +49,6 @@ def handle_message(update, context):
     text = str(update.message.text)
     update.message.reply_text(text)
 
-
-def view_hostel_list_command(update, context):
-    update.message.reply_text("Test hostels")
-
-
-def view_food_list_command(update, context):
-    update.message.reply_text("Test food")
-
-
-def view_study_area_list_command(update, context):
-    update.message.reply_text("Test study areas")
-
-
 def main():
     # Listens for user events
     updater = Updater(api_key, use_context=True)
@@ -77,7 +64,7 @@ def main():
     dp.add_handler(view_stall_handler.view_food_command_handler)
 
     dp.add_handler(view_study_area_handler.view_study_area_command_handler)
-    dp.add_handler(stall_list_commmand_handler.stall_list_command_handler)
+    dp.add_handler(study_area_list_command_handler.study_area_list_command_handler)
 
     dp.add_handler(MessageHandler(Filters.text, handle_message))
     updater.start_polling()
