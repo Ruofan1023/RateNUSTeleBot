@@ -15,8 +15,8 @@ def view_comments(update, context):
         else:
             if comment_type == "food":
                 comment_type = "stall"
-            else:
-                comment_type = context.args[0]
+            elif comment_type == "studyarea":
+                comment_type = "studyArea"
             id = context.args[1]
             req_url = url + "/" + comment_type + "/" + str(id);
             body = {

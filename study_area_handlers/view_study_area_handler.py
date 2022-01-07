@@ -29,7 +29,7 @@ def view_study_area_command(update, context):
             photo = response_data['imageUrl'][0]
             context.bot.sendPhoto(chat_id=update.message.chat.id, photo=photo)
             update.message.reply_text("To view the rating & reviews for " +
-                                      study_area_name + ", please reply with /comments studyArea " + study_area_id +
+                                      study_area_name + ", please reply with /comments studyarea " + study_area_id +
                                       "\. For more information, please visit our website " + link + "\.",
                                       parse_mode='MarkDownV2')
         else:
