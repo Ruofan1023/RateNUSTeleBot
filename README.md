@@ -1,1 +1,1 @@
-# RateNUSTeleBot
+# RateNUS Telegram Bot
