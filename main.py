@@ -11,9 +11,9 @@ from study_area_handlers import view_study_area_handler, study_area_list_command
 import view_comments_handler
 
 # RF test bot
-api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
+# api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
 # XC test bot
-# api_key = '5097774646:AAG-O4n-xc2hmOjW0pB_evVxcgMM-EfGKjY'
+api_key = '5097774646:AAG-O4n-xc2hmOjW0pB_evVxcgMM-EfGKjY'
 
 updater = Updater(api_key, use_context=True)
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -39,7 +39,7 @@ def start_command(update, context):
                               "information about campus living/studying\n\n"
                               "🏖 To view a list of hostels: \nEnter */hostels*\n"
                               "🍱 To view a list of food stalls: \nEnter */foods*\n"
-                              "📚 To view a list of study areas: \nEnter */studyAreas*\n",
+                              "📚 To view a list of study areas: \nEnter */studyareas*\n",
                               parse_mode= 'Markdown')
     chat_id = update.message.chat.id
     print("chat id: " + str(chat_id))
