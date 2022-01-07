@@ -11,9 +11,14 @@ def hostel_list_command(update, context):
         "pageNum": 0,
         "pageSize": 100
     }
-    response = requests.post(url, data=body)
-    print(str(response))
-    update.message.reply_text(response)
+    response = requests.post(url, json=body)
+    print(response.json())
+    response_json = response.json()
+    name_list = []
+    content_list = response_json['content']
+    for hostel in content_list:
+        name_list.append(str(hostel['id']) + ". " + hostel['name'] + "\n")
+    update.message.reply_text("".join(name_list))
 
 
 hostel_list_command_handler = CommandHandler("hostels", hostel_list_command)
