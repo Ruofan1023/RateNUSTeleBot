@@ -8,7 +8,9 @@ from hostel_handlers import hostel_list_command_handler, view_hostel_handler
 # RF test bot
 from food_handlers import view_stall_handler, stall_list_commmand_handler
 from study_area_handlers import view_study_area_handler, study_area_list_command_handler
+import view_comments_handler
 
+# RF test bot
 api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
 # XC test bot
 # api_key = '5097774646:AAG-O4n-xc2hmOjW0pB_evVxcgMM-EfGKjY'
@@ -38,7 +40,7 @@ def start_command(update, context):
                               "🏖 To view a list of hostels: \nEnter */hostel*\n"
                               "🍱 To view a list of food stalls: \nEnter */food*\n"
                               "📚 To view a list of study areas: \nEnter */studyArea*\n",
-                              parse_mode= 'Markdown')
+                              parse_mode='Markdown')
     chat_id = update.message.chat.id
     print("chat id: " + str(chat_id))
 
@@ -69,12 +71,13 @@ def main():
     dp.add_handler(hostel_list_command_handler.hostel_list_command_handler)
     dp.add_handler(view_hostel_handler.view_hostel_command_handler)
 
+    dp.add_handler(view_comments_handler.view_comments_handler)
+
     dp.add_handler(stall_list_commmand_handler.stall_list_command_handler)
     dp.add_handler(view_stall_handler.view_food_command_handler)
 
     dp.add_handler(view_study_area_handler.view_study_area_command_handler)
     dp.add_handler(stall_list_commmand_handler.stall_list_command_handler)
-
 
     dp.add_handler(MessageHandler(Filters.text, handle_message))
     updater.start_polling()
