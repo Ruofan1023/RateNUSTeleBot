@@ -12,7 +12,6 @@ def stall_list_command(update, context):
         "pageSize": 100
     }
     response = requests.post(url, json=body)
-    print(response.json())
     response_json = response.json()
     name_list = []
     content_list = response_json['content']

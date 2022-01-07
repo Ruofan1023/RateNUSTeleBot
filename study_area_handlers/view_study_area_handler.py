@@ -11,7 +11,6 @@ def view_study_area_command(update, context):
         req_url = url + "/" + str(hostel_id)
         response = requests.get(req_url)
         response_data = response.json()
-        print(response_data)
         text = "⭐️ {name}\n📍 {location}\n{description}" \
             .format(name=response_data['name'], location=response_data['location'],
                     description=response_data['description'])
