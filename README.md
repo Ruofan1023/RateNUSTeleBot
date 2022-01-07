@@ -5,8 +5,11 @@ A [Telegram bot](https://t.me/RateNUSBot) that retrieves data from RateNUS websi
 
 #### `/hostels` 
 view a list of hostels in NUS
+<img src="images/listView.jpg" alt="list view" width="200"/>
+
 #### `/hostel [id]` 
 view a hostel's information
+<img src="images/individualView.jpg" alt="individual view" width="200"/>
 
 #### Similar commands for 
 - `/foods` 
@@ -16,3 +19,4 @@ view a hostel's information
 
 #### `/comments hostel/food/studyArea [id]`
 View comments of a certain type
+<img src="images/commentView.jpg" alt="comment view" width="200"/>
