@@ -1,5 +1,7 @@
 # This is a sample Python script.
 import logging
+import os
+
 from telegram.ext import *
 
 # api_key = os.environ['API_KEY']
@@ -11,9 +13,9 @@ from study_area_handlers import view_study_area_handler, study_area_list_command
 import view_comments_handler
 
 # RF test bot
-# api_key = '5066015679:AAFJzkzf6dN513gH06zU_uVYRlKsS22vqlY'
+api_key = os.environ['API_KEY']
 # XC test bot
-api_key = '5097774646:AAG-O4n-xc2hmOjW0pB_evVxcgMM-EfGKjY'
+# api_key = '5097774646:AAG-O4n-xc2hmOjW0pB_evVxcgMM-EfGKjY'
 
 updater = Updater(api_key, use_context=True)
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
