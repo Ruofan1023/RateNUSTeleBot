@@ -4,11 +4,11 @@ A [Telegram bot](https://t.me/RateNUSBot) that retrieves data from RateNUS websi
 ## Features 
 
 #### `/hostels` 
-view a list of hostels in NUS
+view a list of hostels in NUS <br /><br />
 <img src="images/listView.jpg" alt="list view" width="200"/>
 
 #### `/hostel [id]` 
-view a hostel's information
+view a hostel's information <br /><br />
 <img src="images/individualView.jpg" alt="individual view" width="200"/>
 
 #### Similar commands for 
@@ -18,5 +18,5 @@ view a hostel's information
 - `/studyArea [id]`
 
 #### `/comments hostel/food/studyArea [id]`
-View comments of a certain type
+View comments of a certain type <br /><br />
 <img src="images/commentView.jpg" alt="comment view" width="200"/>
