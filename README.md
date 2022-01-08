@@ -1,5 +1,5 @@
 # RateNUS Telegram Bot
-A [Telegram bot](https://t.me/RateNUSBot) that retrieves data from RateNUS api built by [this](https://github.com/Linxcathyyy/rateNUS/graphs/contributors) group of wonderful people [here](https://ratenus.com)
+A [Telegram bot](https://t.me/RateNUSBot) that retrieves data from [RateNUS](https://ratenus.com) api built by [this](https://github.com/Linxcathyyy/rateNUS/graphs/contributors) group of wonderful people
 
 ## Features 
 
